@@ -1,0 +1,2 @@
+sshpass -p Starcross@2021crbc scp springcloud-gateway/target/springcloud-gateway-0.0.1-SNAPSHOT.jar starcross@10.2.12.7:/opt/workspace/fxk
+sshpass -p Starcross@2021crbc scp springcloud-server/target/springcloud-server-0.0.1-SNAPSHOT.jar starcross@10.2.12.7:/opt/workspace/fxk

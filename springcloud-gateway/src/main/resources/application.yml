@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: springcloud-gateway
+  profiles:
+    active: dev
+  cloud:
+    gateway:
+      routes:
+        - id: datetime_after_route    # <------ 这里是路由配置的ID
+          uri: http://59.110.164.2:8081  # <------ 这里是路由最终目标Server的URI(Host)
+          predicates: # <------ 谓词集合配置，多个是用and逻辑连接
+            - Path=/**   # <------- Key(name)=Expression，键是谓词规则工厂的ID，值一般是匹配规则的正则表示
+
+      httpclient:
+        wiretap: true
+      httpserver:
+        wiretap: false
+server:
+  port: 9000
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
